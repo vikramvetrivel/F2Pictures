@@ -6,4 +6,4 @@ def homePage(request):
     Renders the basic layout for the home page
     """
 
-    return render(request, 'index.html')
+    return render(request, 'HTML/index.html')
