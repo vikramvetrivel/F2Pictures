@@ -1,12 +1,13 @@
 ﻿{% load staticfiles %}
 <!DOCTYPE html>
-<html>
+<html ng-app="mainApp">
 <head>
+
 	<meta charset="utf-8" />
     <title>F2 Pictures / Vikram Vetrivel</title>
     <meta name="description" content="Sydney Wedding, Events and Corporate Videos and Photography. Contact us for a free consultation" />
     <meta name="author" content="Vikram Vetrivel" />
-    <link rel="shortcut icon" href={% static "img/favicon.png" %} type="image/x-icon" />
+    <link rel="shortcut icon" href={% static "img/f2logo.svg" %} type="image/x-icon" />
 
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -18,373 +19,32 @@
     <link rel="stylesheet" type="text/css" href={% static "rs-plugin/css/settings.css" %} >
     <link rel="stylesheet" type="text/css" href={% static "rs-plugin/css/layers.css" %}>
 	<link rel="stylesheet" type="text/css" href={% static "rs-plugin/css/navigation.css" %} >	
+
+	<base href="/"> <!-- For Angular HTML5Mode-->
 </head>
+
 <body>
 
 	<!-- Page Wrapper -->
 	<div id="page">
-		<!-- Header -->
-		<header>
-			<div class="top-header">
-                <div class="container">
-                    <ul class="contacts">
-                        <li><i class="fa fa-phone"></i>0 435 863 812</li>
-                        <li><a href="mailto:vikram@f2pictures.com"><i class="fa fa-envelope"></i>vikram@f2pictures.com</a></li>
-                    </ul>
-                    <ul class="actions">
-                    	<li class="custom-select">
-							<span class="default"><i class="fa fa-globe"></i><span class="content">ABN: 38812271722<span></span>
-						</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="bottom-header">
-            	<div class="container">
-            		<span class="mobile-navigation-toggle hidden-md hidden-lg">
-						<span class="menui top-menu"></span>
-						<span class="menui mid-menu"></span>
-						<span class="menui bottom-menu"></span>
-					</span>
-
-            		<div class="logo">
-            			<a href="index.html">
-            				<img src={% static "img/f2logo.svg" %} alt="logo" width="60" height="60">
-            			</a>
-            		</div>
-				   	
-				   	<div class="right-box">
-						<nav class="main-nav">
-						    <ul class="menu">
-						        <li class="menu-item menu-item-has-children has-mega-menu current-menu-parent">
-						            <a href="#">Home</a>
-						            <ul class="row megamenu-wrap">
-										<li class="menu-item col-sm-3">
-											<a href="#">Corporate</a>
-	                                        <ul class="sub-menu">
-	                                            <li class="current-menu-item"><a href="index.html">Traditional Corporate 1</a></li>
-	                                            <li><a href="index-2.html">Traditional Corporate 2</a></li>
-	                                            <li><a href="index-7.html">Corporate with Partial Header Image</a></li>
-	                                            <li><a href="index-4.html">Corporate with Fullscreen Slider</a></li>
-	                                        </ul>
-	                                    </li>
-	                     
-	                               		<li class="menu-item col-sm-3">
-											<a href="#">Creative</a>
-	                                        <ul class="sub-menu">
-	                                            <li><a href="index-12.html">Side Menu Corporate</a></li>
-	                                            <li><a href="index-3.html">Creative Agency with Header Hover</a></li>
-	                                            <li><a href="index-9.html">Creative Studio with Transparent Header</a></li>
-	                                        </ul>
-	                                    </li>
-	                              		
-	                              		<li class="menu-item col-sm-3">
-	                              			<a href="#">Portfolio</a>
-	                                        <ul class="sub-menu">
-	                                            <li><a href="index-5.html">Onepage Scroll Portfolio</a></li>
-	                                            <li><a href="index-8.html">Application Presentation</a></li>
-	                                            <li><a href="index-6.html">Shop with Full Thumb Products</a></li>
-	                                        </ul>
-	                                    </li>
-	                           
-	                               		<li class="menu-item col-sm-3">
-	                              			<a href="#">One Page</a>
-	                                        <ul class="sub-menu">
-	                                            <li><a href="index-11.html">Fullscreen Photography</a></li>
-	                                            <li><a href="index-10.html">Photo Studio</a></li>
-	                                        </ul>
-	                                    </li>  
-	                                </ul>
-						        </li>
-						        <li class="menu-item menu-item-has-children">
-						            <a href="#">Pages</a>
-						            <ul class="sub-menu">
-						                <li class="menu-item">
-						                    <a href="about.html">About</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="services.html">Services</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="showreel.html">Showreel</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="404-page.html">404</a>
-						                </li>
-						                 <li class="menu-item">
-						                    <a href="coming-soon.html">Coming Soon</a>
-						                </li>
-						                 <li class="menu-item">
-						                    <a href="gallery.html">Gallery</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="careers.html">Careers</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="faq.html">FAQ</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="typography.html">Typography</a>
-						                </li>
-						            </ul>  
-						        </li>
-						        <li class="menu-item menu-item-has-children">
-						            <a href="#">Portfolio</a>
-						            <ul class="sub-menu">
-						                <li class="menu-item menu-item-has-children">
-						                    <a href="#">Grid</a>
-						                     <ul class="sub-menu">
-								                <li class="menu-item">
-								                    <a href="portfolio-1col.html">1 Column</a>
-								                </li>
-								                <li class="menu-item">
-								                    <a href="portfolio-2col.html">2 Columns</a>
-								                </li>
-								                <li class="menu-item">
-								                    <a href="portfolio-3col.html">3 Columns</a>
-								                </li>
-								                <li class="menu-item">
-								                    <a href="portfolio-4col.html">4 Columns</a>
-								                </li>
-								            </ul>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="portfolio-masonry.html">Masonry</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="portfolio-wall.html">Wall</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="portfolio.html">Without Borders</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="single-portfolio.html">Single Portfolio</a>
-						                </li>
-						            </ul>
-						        </li>
-						        <li class="menu-item menu-item-has-children">
-						            <a href="#">Journal</a>
-						            <ul class="sub-menu">
-						                <li class="menu-item">
-						                    <a href="blog-listing-nosidebar.html">Journal Listing</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="blog-listing.html">With Right Sidebar</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="blog.html">With Columns</a>
-						                </li>
-						                <li class="menu-item menu-item-has-children">
-						                    <a href="#">Single Post</a>
-						                    <ul class="sub-menu">
-								                <li class="menu-item">
-								                    <a href="single-post-full.html">Fullwidth Post</a>
-								                </li>
-								                <li class="menu-item">
-								                    <a href="single-post.html">Post With Partial Image</a>
-								                </li>
-								                <li class="menu-item">
-								                    <a href="single-post-big.html">Post With Big Image</a>
-								                </li>
-								            </ul>
-						                </li>
-						            </ul>
-						        </li>
-						        <li class="menu-item menu-item-has-children">
-						            <a href="#">Shop</a>
-						            <ul class="sub-menu">
-						                <li class="menu-item">
-						                    <a href="shop.html">All Products</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="shop-sidebar.html">All Products With Sidebar</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="single-product.html">Single Product</a>
-						                </li>
-						                <li class="menu-item">
-						                    <a href="cart.html">Cart</a>
-						                </li>
-						            </ul>
-						        </li>
-						        <li class="menu-item menu-item-has-children">
-						            <a href="contact.html">Contact</a>
-						        </li>
-						    </ul>
-						</nav>
-
-						<div class="search-trigger">
-					   		<i class="icon fa fa-search dismiss"></i>
-					   		<div class="search-box dismiss">
-					   			<form class="search-form dismiss" action="#">
-					   				<div class="input-line dismiss">
-						   				<input type="text" class="search-input dismiss" placeholder="Search">
-						   				<button class="search-submit dismiss"><i class="fa fa-search"></i></button>
-						   			</div>
-					   			</form>
-					   		</div>
-					   	</div>
-					</div>
-            	</div>
-            </div>
-		</header>
-
-		<!-- Main Content -->
-		<div class="content-wrapper">
-			<section class="photography-page">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-sm-6 custom-col">
-							<div class="big-photography">
-								<a href="#"><img src={% static "img/big-photography-thumb-1.jpg" %} alt="photography big"></a>
-								<div class="description">
-									<h2>Photography</h2>
-									<p>Weddings and Events</p>
-								</div>
-							</div>
-						</div>
-						<!--<div class="col-sm-6 custom-col">
-							<div class="big-photography">
-								<a href="#"><img src= {% static "img/big-photography-thumb-2.jpg" %} alt="photography big"></a>
-								<div class="description">
-									<h2>Films and Videos</h2>
-									<p>Corporate and Weddings</p>
-								</div>
-							</div>
-						</div> -->
-						<div class="col-sm-6 custom-col">
-							<div class="big-photography">
-								<a href="#">
-									<video width="100%" autoplay muted>
-										<source src = {% static "video/ShowReel.mp4" %} type="video/mp4" alt="video showreel"></source>
-									</video>
-								</a>
-								<div class="description">
-									<h2>Films and Videos</h2>
-									<p>Corporate and Weddings</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-
-		<!-- Footer -->
-		<footer>
-			<div class="top-footer">
-				<div class="container">
-					<div class="row isotope">
-						<div class="col-md-3 col-sm-6 col-xs-12 isotope-item">
-							<div class="widget widget_contact">
-	                            <h4 class="widget-title">Contact Info</h4>
-	                            <div class="widget-body">
-	                            	<ul class="contact-info clean-list">
-	                            		<li>
-	                            			<span class="title">Address:</span>
-		                            		<p>2206/18 Park Ln,</p>
-		                            		<p>Chippendale, NSW 2008, Australia.</p>
-	                            		</li>
-	                            		<li>
-	                            			<span class="title">Phone:</span>
-		                            		<p>0 435 863 812 - Office</p>
-		                           		</li>
-	                            		<li>
-	                            			<span class="title">Email:</span>
-		                            		<p><a href="mailto:vikram@f2pictures.com">vikram@f2pictures.com</a></p>
-	                            		</li>
-	                            		<li>
-	                            			<span class="title">Follow Us:</span>
-		                            		<ul class="socials clean-list">
-		                            			<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-		                            			<li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
-		                            			<li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-		                            			<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-		                            			<li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-		                            			<li><a href="#"><i class="fa fa-behance-square"></i></a></li>
-		                            			<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-		                            		</ul>
-	                            		</li>
-	                            	</ul>
-	                            </div>
-	                        </div>
-						</div>
-
-						<div class="col-md-3 col-sm-6 col-xs-12 isotope-item">
-							<div class="widget widget_instagram">
-	                            <h4 class="widget-title">Follow Instagram</h4>
-	                            <div class="widget-body">
-	                            	<ul class="instagram-feed clean-list" data-instagram="12" data-instagram-username="mrgicucaus"></ul>
-	                            </div>
-	                        </div>
-						</div>
-
-						<div class="col-md-3 col-sm-6 col-xs-12 isotope-item">
-							<div class="widget widget_tag_cloud">
-	                            <h4 class="widget-title">Popular Tags</h4>
-	                            <div class="widget-body">
-	                            	<div class="tagcloud">
-	                            		<a href="#">art</a>
-	                            		<a href="#">audio</a>
-	                            		<a href="#">beauty</a>
-	                            		<a href="#">concepts</a>
-	                            		<a href="#">entertainment</a>
-	                            		<a href="#">gallery</a>
-	                            		<a href="#">ideas</a>
-	                            		<a href="#">image</a>
-	                            		<a href="#">lifestyle</a>
-	                            		<a href="#">link</a>
-	                            		<a href="#">nature</a>
-	                            		<a href="#">people</a>
-	                            		<a href="#">post</a>
-	                            		<a href="#">quote</a>
-	                            		<a href="#">video</a>
-	                            	</div>
-	                            </div>
-	                        </div>
-						</div>
-
-						<div class="col-md-3 col-sm-6 col-xs-12 isotope-item">
-							<div class="widget widget_recent_posts">
-	                            <h4 class="widget-title">Recent Posts</h4>
-	                            <div class="widget-body">
-	                            	<ul class="recent-posts clean-list">
-	                            		<li>
-	                            			<img class="cover" src={% static "img/recent-post-1.jpg" %} alt="recent post">
-	                            			<h4><a href="#">Duis Aute Irure Dolor</a></h4>
-	                            			<span class="date">June 09, 2018</span>
-	                            		</li>
-	                            		<li>
-	                            			<img class="cover" src={% static "img/recent-post-2.jpg" %} alt="recent post">
-	                            			<h4><a href="#">Temporibus Autem Quibus</a></h4>
-	                            			<span class="date">June 09, 2018</span>
-	                            		</li>
-	                            		<li>
-	                            			<img class="cover" src={% static "img/recent-post-3.jpg" %} alt="recent post">
-	                            			<h4><a href="#">Saepe Eveniet Ut Et</a></h4>
-	                            			<span class="date">June 09, 2018</span>
-	                            		</li>
-	                            	</ul>
-	                            </div>
-	                        </div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="bottom-footer">
-				<div class="container">
-					<div class="alignleft align-left copyright">
-						Copyright © 2016 F2Pictures / Vikram Vetrivel. All Rights Reserved.
-					</div>
-
-					<div class="alignright align-right copyright">
-						This site uses Cookies.
-					</div>
-				</div>
-			</div>
-		</footer>
+		<div ng-view> </div>
 	</div>
+
+	<!-- Angular Script Includes -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-cookies.js"></script>
+
+	<!-- Angular Modules -->
+	<script type="text/javascript" src={% static "Landing/js/ngMainApp.js" %}></script>
+
+	<!-- Angluar Controllers -->
+	<script type="text/javascript" src={% static "Landing/js/ngLeadGeneratorController.js" %}></script>
+
+	<!-- Angular Directives -->
+	<script type="text/javascript" src={% static "Landing/js/ngLocationMapDirective.js" %}></script>
 
 	<!-- Scripts -->
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
@@ -395,7 +55,8 @@
 	<script type="text/javascript" src={% static "js/imagesloaded.pkgd.min.js" %}></script>
 	<script type="text/javascript" src={% static "js/jquery.magnific-popup.min.js" %}></script>
 	<script type="text/javascript" src={% static "js/isotope.js" %}></script>
-	<script type="text/javascript" src={% static "js/slick.js"%}></script>
+	<script type="text/javascript" src={% static "js/slick.js" %}></script>
 	<script type="text/javascript" src={% static "js/options.js" %}></script>
+
 </body>
 </html>

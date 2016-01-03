@@ -1,0 +1,35 @@
+<ng-include src = "'/static/Landing/ngTemplates/header.html'"></ng-include>
+    
+<!-- Main Content -->
+<div class="content-wrapper">
+    <section class="photography-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 custom-col">
+                    <div class="big-photography">
+                        <a href="#"><img src= "static/img/big-photography-thumb-1.jpg" alt="Photography Banner"></a>
+                        <div class="description">
+                            <h2 ng-bind="topLevelServices[0]"></h2>
+                            <p ng-bind="topLevelServiceTagLine[0]"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 custom-col">
+                    <div class="big-photography">
+                        <a href="#">
+                            <video width="100%" autoplay muted>
+                                <source src = "static/video/ShowReel.mp4" type="video/mp4" alt="Video Showreel Banner">
+                            </video>
+                        </a>
+                        <div class="description">
+                            <h2 ng-bind="topLevelServices[1]"></h2>
+                            <p ng-bind="topLevelServiceTagLine[1]"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    
+<ng-include src = "'/static/Landing/ngTemplates/footer.html'"></ng-include>

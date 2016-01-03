@@ -498,7 +498,23 @@
 					$(val).find("#"+tab_id).fadeIn(800).addClass('current');
 				});
 			});
-		
+
+			function initialize() {
+		        var mapCanvas = document.getElementById('map');
+		        var mapOptions = {
+                    center: new google.maps.LatLng(38.954771,-84.275544),
+                    zoom: 16,
+                    scrollwheel: false,
+                    disableDefaultUI: true,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    styles: [{ stylers: [{saturation: -100}]}]
+                };
+		        var map = new google.maps.Map(mapCanvas, mapOptions);
+		    }
+
+		    if (jQuery('#map').length) {
+		        google.maps.event.addDomListener(window, 'load', initialize);
+		    }
 		},
 
 		statsCounter: function () {
