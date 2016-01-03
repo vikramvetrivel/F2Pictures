@@ -7,7 +7,7 @@ mainApp.controller('TopLevelServicesController', ['$scope', function($scope){
 }])
 
 
-mainApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+mainApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider
 
         .when('/home', {
@@ -28,6 +28,4 @@ mainApp.config(['$routeProvider', '$locationProvider', function($routeProvider, 
         .otherwise({
             redirectTo: '/'     
         });
-
-    $locationProvider.html5Mode(true);
 }])
