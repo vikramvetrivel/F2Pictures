@@ -3,7 +3,7 @@ var mainApp = angular.module('mainApp', ['ngRoute']);
 mainApp.controller('TopLevelServicesController', ['$scope', function($scope){
     
     $scope.topLevelServices = ['Photography', 'Films and Videos'];
-    $scope.topLevelServiceTagLine = ['Weddings and Events', 'Corporate and Weddings']
+    $scope.topLevelServiceTagLine = ['Fashion Portfolios, Weddings and Events', 'Corporate and Weddings']
 }])
 
 
@@ -23,6 +23,10 @@ mainApp.config(['$routeProvider', function($routeProvider) {
         .when('/contact', {
             controller: 'LeadGeneratorController',
             templateUrl: 'static/Landing/ngTemplates/contact.html'
+        })
+
+        .when('/photography', {
+            templateUrl: 'static/Landing/ngTemplates/photography.html'
         })
 
         .otherwise({

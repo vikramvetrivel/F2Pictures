@@ -7,15 +7,15 @@
                     <div class="widget widget_contact">
                         <h4 class="widget-title">Contact Info</h4>
                         <div class="widget-body">
-                            <ul class="contact-info clean-list">
+                            <ul class="contact-info clean-list" ng-controller="F2PicturesDetails">
                                 <li>
                                     <span class="title">Address:</span>
-                                    <p>2206/18 Park Ln,</p>
-                                    <p>Sydney, NSW 2008, Australia.</p>
+                                    <p>{{details.address_line_1}}</p>
+                                    <p>{{details.address_line_2}}, {{details.state}} {{details.pin}}, Australia.</p>                                    
                                 </li>
                                 <li>
                                     <span class="title">Phone:</span>
-                                    <p>0 435 863 812 - Office</p>
+                                    <p>{{details.phone}} - Office</p>
                                 </li>
                                 <li>
                                     <span class="title">Email:</span>

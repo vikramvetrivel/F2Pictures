@@ -210,3 +210,9 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+F2Pictures/F2Pictures/Landing/__pycache__/
+F2Pictures/F2Pictures/Landing/migrations/
+F2Pictures/F2Pictures/Landing/static/img_old/
+F2Pictures/F2Pictures/Landing/static/img/
+F2Pictures/F2Pictures/Landing/static/video/
+F2Pictures/F2Pictures/__pycache__/

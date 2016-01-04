@@ -1,4 +1,4 @@
-﻿/*
+/*
 [Master Stylesheet]
 Project: Whitespace
 
@@ -2324,7 +2324,7 @@ footer.footer-v2 .footer-navigation li {
 .widget.widget_pricefilter .price-slider .values-wrapper span:before {
   content: attr(data-currency);
   display: inline-block
-}
+}data
 
 .widget.widget_pricefilter .price-slider .slider {
   -webkit-box-shadow: none;
@@ -5297,6 +5297,10 @@ ul.page-numbers li .current {
   padding: 75px 0 0;
 }
 
+.portfolio-section.v2 {
+  padding: 0px 0 0;
+}
+
 .grid-projects-section {
   padding: 10px 0 0;
 }
@@ -5905,6 +5909,10 @@ ul.page-numbers li .current {
 
 .gallery-section.v2 {
   padding: 0 0 50px;
+}
+
+.gallery-section.v3 {
+  padding: 0 0 0px;
 }
 
 .gallery-section .view-more {
