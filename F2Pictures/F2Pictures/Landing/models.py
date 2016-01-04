@@ -13,8 +13,9 @@ class Company(models.Model):
     state = models.CharField(max_length=3, blank=True, null=True)
     pin = models.PositiveIntegerField(blank=True, null=True)
     phone = PhoneNumberField(blank=True, null=True)
+    record_created_by = models.ForeignKey('auth.User', related_name='company')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 class Client(models.Model):
