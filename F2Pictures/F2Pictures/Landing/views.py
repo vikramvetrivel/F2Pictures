@@ -15,6 +15,11 @@ def homePage(request):
     """
     return render(request, 'HTML/index.html')
 
+def packery(request):
+    """
+    Renders the basic layout for the home page
+    """
+    return render(request, 'HTML/packery.html')
 
 class CompanyViewSet(viewsets.ModelViewSet):
 

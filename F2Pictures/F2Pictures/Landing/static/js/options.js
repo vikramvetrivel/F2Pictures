@@ -59,6 +59,7 @@
 			this.checkVisible();
 			this.smallToggles();
 			this.statsCounter();
+			this.packeryInit();
 			this.isotopeInit();
 			this.magnificInit();
 			this.countdownInit();
@@ -532,6 +533,11 @@
 					});
 				}	
 			});
+		},
+
+
+		packeryInit: function (){
+			var packeryContainer = $('.pakery');
 		},
 
 		isotopeInit: function () {

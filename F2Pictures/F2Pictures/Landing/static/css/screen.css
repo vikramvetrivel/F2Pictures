@@ -8587,3 +8587,6 @@ input[type=number]::-webkit-outer-spin-button {
 .tp-loader {
   display: none !important;
 }
+
+.packery-item { width: 25%; }
+.packery-item.w2 { width: 50%; }

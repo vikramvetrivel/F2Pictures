@@ -18,6 +18,7 @@ router.register(r'project', views.ProjectViewSet)
 
 urlpatterns = patterns('',
     url(r'^$', 'F2Pictures.Landing.views.homePage', name='home'),
+    url(r'^packery/', 'F2Pictures.Landing.views.packery', name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(router.urls)),  
 )
