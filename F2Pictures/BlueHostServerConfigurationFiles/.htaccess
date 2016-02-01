@@ -1,0 +1,8 @@
+# Use PHP5.4 as default
+AddHandler application/x-httpd-php54 .php
+Options +SymLinksIfOwnerMatch
+AddHandler fcgid-script .fcgi
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(.+\.|)f2pictures.com
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ f2pictures.fcgi/$1 [QSA,L]
