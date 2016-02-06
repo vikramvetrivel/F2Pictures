@@ -1,10 +1,23 @@
-var mainApp = angular.module('mainApp', ['ngRoute']);
+var mainApp = angular.module('mainApp', ['ngRoute', 'ui.bootstrap']);
 
-mainApp.controller('TopLevelServicesController', ['$scope', function($scope){
+mainApp.controller('TopLevelServicesController', ['$scope', '$location',  function($scope, $location){
     
     $scope.topLevelServices = ['Photography', 'Films and Videos'];
     $scope.topLevelServiceTagLine = ['Fashion Portfolios, Weddings and Events', 'Corporate and Weddings']
-}])
+
+    $scope.getClass = function(pageName) {
+        if (pageName == 'home')
+            return 'menu-item menu-item-has-children current-menu-parent';
+        else
+            return 'menu-item menu-item-has-children'; 
+    }
+
+}]);
+
+
+/*mainApp.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.includeSpinner = false;
+}]);*/
 
 
 mainApp.config(['$routeProvider', function($routeProvider) {
@@ -29,7 +42,20 @@ mainApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'static/Landing/ngTemplates/photography.html'
         })
 
+        .when('/photography/campaigns', {
+            templateUrl: 'static/Landing/ngTemplates/photography/campaigns.html'
+        })
+
+        .when('/photography/models', {
+            templateUrl: 'static/Landing/ngTemplates/photography/beamodel.html'
+        })
+
+        .when('/quickportfolio', {
+            controller: 'QuickPortfolioController',
+            templateUrl: 'static/Landing/ngTemplates/quickportfolio.html'
+        })
+
         .otherwise({
             redirectTo: '/'     
         });
-}])
+}]);

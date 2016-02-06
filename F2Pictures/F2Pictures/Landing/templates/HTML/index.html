@@ -1,66 +1,78 @@
 ﻿{% load staticfiles %}
 <!DOCTYPE html>
 <html ng-app="mainApp">
-<head>
+    <head>
 
-	<meta charset="utf-8" />
-    <title>F2 Pictures / Vikram Vetrivel</title>
-    <meta name="description" content="Sydney Wedding, Events and Corporate Videos and Photography. Contact us for a free consultation" />
-    <meta name="author" content="Vikram Vetrivel" />
-    <link rel="shortcut icon" href={% static "img/f2logo.svg" %} type="image/x-icon" />
+    	<meta charset="utf-8" />
+        <title>F2 Pictures / Vikram Vetrivel</title>
+        <meta name="description" content="Sydney Wedding, Events and Corporate Videos and Photography. Contact us for a free consultation" />
+        <meta name="author" content="Vikram Vetrivel" />
+        <link rel="shortcut icon" href={% static "img/f2logo.svg" %} type="image/x-icon" />
 
-    <!-- Mobile Specific Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <!-- Style CSS -->
-    <link rel="stylesheet" type="text/css" href={% static "css/font-awesome.min.css" %} />
-    <link rel="stylesheet" type="text/css" href={% static "css/bootstrap.css" %} />
-    <link rel="stylesheet" type="text/css" href={% static "css/screen.css" %} />
-    <link rel="stylesheet" type="text/css" href={% static "rs-plugin/css/settings.css" %} >
-    <link rel="stylesheet" type="text/css" href={% static "rs-plugin/css/layers.css" %}>
-	<link rel="stylesheet" type="text/css" href={% static "rs-plugin/css/navigation.css" %} >	
+        <!-- Style CSS -->
+        <link rel="stylesheet" type="text/css" href={% static "css/font-awesome.min.css" %} />
+        <link rel="stylesheet" type="text/css" href={% static "css/bootstrap.css" %} />
+        <link rel="stylesheet" type="text/css" href={% static "css/screen.css" %} />
+        <link rel="stylesheet" type="text/css" href={% static "rs-plugin/css/settings.css" %} >
+        <link rel="stylesheet" type="text/css" href={% static "rs-plugin/css/layers.css" %}>
+    	<link rel="stylesheet" type="text/css" href={% static "rs-plugin/css/navigation.css" %} >	
+        <link rel='stylesheet' type='text/css' media='all' href={% static "css/angular-loading-bar.css" %} />
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-	<!-- Page Wrapper -->
-	<div id="page">
-		<div ng-view> </div>
-	</div>
+    	<!-- Page Wrapper -->
+    	<div id="page">
+    		<div ng-view> </div>
+    	</div> 
 
-	<!-- Angular Script Includes -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-cookies.js"></script>
 
-	<!-- Angular Modules -->
-	<script type="text/javascript" src={% static "Landing/js/ngMainApp.js" %}></script>
+        <!-- Jquery needs to load before angular -->
+        <script type="text/javascript" src={% static "js/jquery.js" %}></script>
+     
+    	<!-- Angular Script Includes -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-cookies.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-touch.js"></script>
+         <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script>
 
-	<!-- Angluar Controllers -->
-	<script type="text/javascript" src={% static "Landing/js/ngLeadGeneratorController.js" %}></script>
-    <script type="text/javascript" src={% static "Landing/js/ngF2PicturesDetailsController.js" %}></script>
+        <!-- Angular Modules -->
+    	<script type="text/javascript" src={% static "Landing/js/ngMainApp.js" %}></script>
 
-	<!-- Angular Directives -->
-	<script type="text/javascript" src={% static "Landing/js/ngLocationMapDirective.js" %}></script>
+    	<!-- Angluar Controllers -->
+    	<script type="text/javascript" src={% static "Landing/js/ngLeadGeneratorController.js" %}></script>
+        <script type="text/javascript" src={% static "Landing/js/ngF2PicturesDetailsController.js" %}></script>
+        <script type="text/javascript" src={% static "Landing/js/ngQuickPortfolioController.js" %}></script>
 
-    <!-- Angular Services -->
-    <script type="text/javascript" src={% static "Landing/js/ngServices.js" %}></script> 
-       
-	<!-- Scripts -->
-	<script src="https://maps.googleapis.com/maps/api/js"></script>
-	<script type="text/javascript" src={% static "js/jquery.js" %}></script>
-	<script type="text/javascript" src={% static "js/modernizr.js" %}></script>
-	<script type="text/javascript" src={% static "rs-plugin/js/jquery.themepunch.tools.min.js" %}></script>
-	<script type="text/javascript" src={% static "rs-plugin/js/jquery.themepunch.revolution.min.js" %}></script>
-	<script type="text/javascript" src={% static "js/imagesloaded.pkgd.min.js" %}></script>
-	<script type="text/javascript" src={% static "js/jquery.magnific-popup.min.js" %}></script>
-	<script type="text/javascript" src={% static "js/isotope.js" %}></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/packery/1.4.3/packery.pkgd.js"></script>
-	<script type="text/javascript" src={% static "js/slick.js" %}></script>
-	<script type="text/javascript" src={% static "js/options.js" %}></script>
+    	<!-- Angular Directives -->
+    	<script type="text/javascript" src={% static "Landing/js/ngLocationMapDirective.js" %}></script>
+        <script type="text/javascript" src={% static "Landing/js/ngTopNavigationBarDirective.js" %}></script>
+        <script type="text/javascript" src={% static "Landing/js/ngInstagramFeedDirective.js" %}></script>
 
-</body>
+        <!-- Angular Services -->
+        <script type="text/javascript" src={% static "Landing/js/ngServices.js" %}></script> 
+           
+    	<!-- Scripts -->
+    	<script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script type="text/javascript" src={% static "js/ui-bootstrap-tpls-1.1.2.js" %}></script>
+    	<script type="text/javascript" src={% static "js/modernizr.js" %}></script>
+    	<script type="text/javascript" src={% static "rs-plugin/js/jquery.themepunch.tools.min.js" %}></script>
+    	<script type="text/javascript" src={% static "rs-plugin/js/jquery.themepunch.revolution.min.js" %}></script>
+    	<script type="text/javascript" src={% static "js/imagesloaded.pkgd.min.js" %}></script>
+    	<script type="text/javascript" src={% static "js/jquery.magnific-popup.min.js" %}></script>
+    	<script type="text/javascript" src={% static "js/isotope.js" %}></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/packery/1.4.3/packery.pkgd.js"></script>
+    	<script type="text/javascript" src={% static "js/slick.js" %}></script>
+    	<script type="text/javascript" src={% static "js/options.js" %}></script>
+        <script type="text/javascript" src={% static "js/masonry-horizontal.js" %}></script>
+        <script type="text/javascript" src={% static "js/packery-mode.pkgd.js" %}></script>
+        <script type="text/javascript" src={% static "js/cells-by-column.js" %}></script> 
+    </body>
 </html>

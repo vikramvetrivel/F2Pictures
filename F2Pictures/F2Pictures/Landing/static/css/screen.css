@@ -4416,6 +4416,8 @@ ul.page-numbers li .current {
 
 .testimonial .member-cover img {
   border-radius: 50%;
+  max-height: 100px;
+  max-width: 100px;
 }
 
 .testimonial .message {
@@ -4426,7 +4428,6 @@ ul.page-numbers li .current {
 .testimonial .message:after {
   position: absolute;
   font-family: 'icomoon';
-  content: "\e903";
   left: 0;
   right: 0;
   bottom: 20px;
@@ -4488,7 +4489,6 @@ ul.page-numbers li .current {
 
 .testimonial.v2 .message:after {
   font-family: FontAwesome;
-  content: "\f097";
   font-size: 30px;
   bottom: 17px;
 }
@@ -5277,7 +5277,7 @@ ul.page-numbers li .current {
 
 .history-section.bg {
   padding: 0;
-  background: url(../img/history-section-bg.jpg) top center;
+  background: url(/static/img/bts2.jpg) top center;
   background-size: cover;
 }
 
@@ -8436,6 +8436,9 @@ h1.tp-caption.WhiteTtl {
 .icon-ctrl:before {
   content: "\e901";
 }
+.icon-videocamera:before {
+  content: "\e925";
+}
 
 .bottom-header .cart-btn > a,
 .bottom-header .custom-select .default {
@@ -8590,3 +8593,22 @@ input[type=number]::-webkit-outer-spin-button {
 
 .packery-item { width: 25%; }
 .packery-item.w2 { width: 50%; }
+
+/* Modal Window */
+
+body.modal-open {
+  overflow: visible;
+}
+
+.vikisotope-item { 
+  float: left;
+  background: #e6e5e4;
+  border: 2px solid #b6b5b4;
+  width: 25%; }
+.vikisotope-item--width2 { width: 50%; }
+
+.otherbrandlogo{
+
+  max-width: 370px;
+  max-height: 100px;
+}

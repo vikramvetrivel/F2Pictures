@@ -1,48 +1,6 @@
 (function ($) {
 	'use strict';
 
-	$.fn.portfolio_more = function (options) {
-		var $object = $(this).find('.isotope'),
-			count = options.items.length,
-			load_count = options.load_count,
-			template = options.template,
-			$newEls = '',
-            loaded_object = '';
-
-        $(this).find('.view-more').on('click', function () {
-        	$newEls = '';
-            loaded_object = '';
-
-            var loaded = $object.find('.added').size(),
-          		remain = '',
-          		start = '';
-
-            remain = (count - loaded) > load_count ? load_count : count - loaded;
-
-            if ((loaded + remain) == count)
-	            $(this).fadeOut( 200 , function() {
-				    $(this).addClass('not-visible');
-				});
-
-            start = loaded < 1 ? 1 : loaded + 1;
-
-            if (remain > 0) {
-            	for (var i = start - 1; i < start + remain - 1; i++) {
-            		if(template=="big")
-            			loaded_object = loaded_object + '<div class="project-box big isotope-item added' + options.items[i].columnclass + ' ' + options.items[i].category + '"><div class="row"><div class="col-md-6"><div class="cover"><a href="' + options.items[i].url + '"><img src="' + options.items[i].src + '" alt="recent project"></a></div></div><div class="col-md-6"><h4 class="title"><a href="' + options.items[i].url + '">' + options.items[i].title + '</a></h4><ul class="project-meta clean-list">' + options.items[i].itemmeta + '</ul><p class="description">' + options.items[i].description + '</p><a class="view-project" href="' + options.items[i].url + '">Read more</a></div></div></div>';
-            		else
-                    	loaded_object = loaded_object + '<div class="isotope-item added ' + options.items[i].columnclass + ' ' + options.items[i].category + '"><div class="project-box"><div class="cover"><a href="' + options.items[i].url + '"><img src="' + options.items[i].src + '" alt="recent project"></a><div class="hover"><h5><a href="' + options.items[i].url + '">' + options.items[i].title + '</a></h5><ul class="category clean-list">' + options.items[i].itemcategory + '</ul></div></div></div></div>';
-                }
-
-				$newEls = $(loaded_object);
-                $object.isotope('insert', $newEls, function () {
-                    $object.isotope('reLayout');
-                });
-            }
-            return false;
-        });
-    }
-
 	$.fn.hasAttr = function(t) {
         var e = this;
         return void 0 !== e.attr(t) ? !0 : !1
@@ -55,12 +13,9 @@
 
 		init: function () {
 			this.slidersInit();
-			this.instagramFeed();
 			this.checkVisible();
 			this.smallToggles();
-			this.statsCounter();
-			this.packeryInit();
-			this.isotopeInit();
+			this.statsCounter();		
 			this.magnificInit();
 			this.countdownInit();
 			this.noUiInit();
@@ -198,83 +153,6 @@
                     ]
                 })
             })
-		},
-
-		instagramFeed: function () {
-		    function themeInstagram(container, data) {
-				var pattern, renderTemplate, url;
-				url = 'https://api.instagram.com/v1';
-				pattern = function(obj) {
-					var item, k, len, template;
-					if (obj.length) {
-						template = '';
-						for (k = 0, len = obj.length; k < len; k++) {
-							item = obj[k];
-							template += "<li><a href='" + item.link + "' title='" + item.title + "' target='_blank'><img src='" + item.image + "' alt='" + item.title + "'></a></li>";
-						}
-
-						return container.append(template);
-					}
-				};
-
-				if (container.data('instagram-username')) {
-					url += "/users/search?q=" + (container.data('instagram-username')) + "&client_id=" + data.clientID + "&callback=?";
-					renderTemplate = this._template;
-
-					$.ajax({
-						dataType: "jsonp",
-						url: url,
-						data: data,
-						success: function(response) {
-						  	var urlUser;
-						  	if (response.data.length) {
-						    	urlUser = "https://api.instagram.com/v1/users/" + response.data[0].id + "/media/recent/?client_id=" + data.clientID + "&count=" + data.count + "&size=l&callback=?";
-						    	return $.ajax({
-						      		dataType: "jsonp",
-						      		url: urlUser,
-						      		data: data,
-						      		success: function(response) {
-						        		var instagramFeed;
-						        		if (response.data.length) {
-						          			instagramFeed = {};
-						          			instagramFeed.data = renderTemplate(response);
-						          			instagramFeed.timestamp = new Date().getTime();
-						          			return pattern(instagramFeed.data);
-						        		}
-						      		}
-						    	});
-						  	}
-						}
-					});
-				}
-		    }
-
-		    themeInstagram.prototype._template = function(obj) {
-			  	var item, k, len, ref, results;
-			  	if (obj.data) {
-			    	ref = obj.data;
-			    	results = [];
-			    	for (k = 0, len = ref.length; k < len; k++) {
-			      		item = ref[k];
-			      		results.push({
-			        	title: item.user.username,
-			        	link: item.link,
-			        	image: item.images.low_resolution.url
-			     		});
-			    	}
-			    	return results;
-			  	}
-		    };
-
-		  	if ($('[data-instagram]').length) {
-		    	var iContainer = $('[data-instagram]');
-		    	iContainer.each(function(){
-		    		var whiteInstagram = new themeInstagram($(this), {
-			      		clientID: '632fb01c8c0d43d7b63da809d0b6a662',
-			      		count: $(this).data('instagram') || 6
-			    	});
-		    	});
-		  	}
 		},
 
 		checkVisible: function () {
@@ -533,67 +411,6 @@
 					});
 				}	
 			});
-		},
-
-
-		packeryInit: function (){
-			var packeryContainer = $('.pakery');
-		},
-
-		isotopeInit: function () {
-			var sidebarWrapper = $('.sidebar .isotope'),
-				footerWrapper = $('.top-footer .isotope'),
-		    	isotopeContainer = $('.isot-projects-wrapper .isotope'),
-				defaultSelection = $('.isot-projects-wrapper').attr('data-default-selection');
-			
-			isotopeContainer.imagesLoaded(function () {
-				isotopeContainer.isotope({
-					filter: defaultSelection,
-					itemSelector: '.isotope-item',
-				    hiddenStyle: {
-				      opacity: 0,
-				      transform: 'scale(0.001)'
-				    },
-				    visibleStyle: {
-				      opacity: 1,
-				      transform: 'scale(1)'
-				    },
-				    transitionDuration: '0.8s'
-				});
-			});
-
-			$('.isot-filters a').on('click', function () {
-				$('.isot-filters .current').removeClass('current');
-				$(this).addClass('current');
-
-				var selector = $(this).attr('data-filter');
-					isotopeContainer.isotope({
-						filter: selector
-					});
-				return false;
-			});
-
-			var isotopeGallery = $('.gallery-wrapper .isotope');
-
-			isotopeGallery.imagesLoaded(function () {
-				isotopeGallery.isotope({
-					itemSelector: '.isotope-item'
-				});
-			});
-
-			setTimeout(function () {
-				sidebarWrapper.imagesLoaded(function () {
-					sidebarWrapper.isotope({
-						itemSelector: '.isotope-item'
-					});
-				});
-
-				footerWrapper.imagesLoaded(function () {
-					footerWrapper.isotope({
-						itemSelector: '.isotope-item'
-					});
-				});
-			}, 2000);
 		},
 
 		magnificInit: function () {
@@ -935,7 +752,8 @@
 		}
 	}
 
-	$(document).ready(function(){
+
+	function executeOnDocumentReady(){
 		whitespace.init();
 
 		setTimeout(function () {
@@ -1002,7 +820,11 @@
 				return false;
 			});
 		}
+	}
 
+
+	$(document).ready(function(){
+		executeOnDocumentReady();
 	});
 
 	$(window).resize(function(){

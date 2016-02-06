@@ -21,7 +21,7 @@ urlpatterns = patterns('',
     url(r'^$', 'F2Pictures.Landing.views.homePage', name='home'),
     url(r'^packery/', 'F2Pictures.Landing.views.packery', name='home'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include(router.urls)),  
+    url(r'^', include(router.urls)),
 )
 
 urlpatterns += staticfiles_urlpatterns()
