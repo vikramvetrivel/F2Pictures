@@ -39,11 +39,19 @@ mainApp.config(['$routeProvider', function($routeProvider) {
         })
 
         .when('/photography', {
-            templateUrl: 'static/Landing/ngTemplates/photography.html'
+            templateUrl: 'static/Landing/ngTemplates/photography/campaigns.html'
         })
 
         .when('/photography/campaigns', {
             templateUrl: 'static/Landing/ngTemplates/photography/campaigns.html'
+        })
+
+        .when('/videos', {
+            templateUrl: 'static/Landing/ngTemplates/videos/about.html'
+        })
+
+        .when('/videos/about', {
+            templateUrl: 'static/Landing/ngTemplates/videos/about.html'
         })
 
         .when('/photography/models', {
